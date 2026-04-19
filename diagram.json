@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Drowsiness Detector",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 100, "left": 100, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 80,
+      "left": 380,
+      "attrs": { "color": "green", "label": "EYE CLOSED" }
+    },
+    { "type": "wokwi-buzzer", "id": "bz1", "top": 220, "left": 390, "attrs": {} }
+  ],
+  "connections": [
+    [ "uno:GND.1", "btn1:2.l", "black", [ "h10" ] ],
+    [ "uno:2", "btn1:1.l", "green", [ "h20" ] ],
+    [ "uno:8", "bz1:+", "red", [ "h10" ] ],
+    [ "uno:GND.2", "bz1:-", "black", [ "h10" ] ],
+    [ "uno:8", "bz1:2", "green", [ "v0" ] ],
+    [ "uno:GND.3", "bz1:1", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
